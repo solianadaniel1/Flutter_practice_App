@@ -6,7 +6,7 @@ class GalleryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
+    return DefaultTabController( //provides simple tab behavior (switching between tabs)
       length: 2,
       child: Scaffold(
         appBar: AppBar(
@@ -18,7 +18,7 @@ class GalleryScreen extends StatelessWidget {
             ],
           ),
         ),
-        body: TabBarView(
+        body: TabBarView( //holds the content for each tab
           children: [
             ListView.builder(
               itemCount: images.length,
@@ -37,7 +37,7 @@ class GalleryScreen extends StatelessWidget {
               crossAxisCount: 2,
               children: images.map((url) {
                 return Card(
-                  child: Image.network(url, fit: BoxFit.cover),
+                  child: Image.network(url, fit: BoxFit.fitHeight),
                 );
               }).toList(),
             ),
